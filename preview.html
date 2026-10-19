@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Catálogo mayorista FRADE: semijoyas con precios detalle, x3 y x6. Arma tu pedido y envíalo por WhatsApp.">
+<meta property="og:title" content="Catálogo FRADE · Toca aquí y arma tu pedido">
+<meta property="og:description" content="¡Arma tu pedido y envíalo por WhatsApp!">
+<meta property="og:image" content="https://catalogo.frade.cl/og.jpg?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://catalogo.frade.cl/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="theme-color" content="#FADCDE">
+<title>Catálogo FRADE</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: vitrina de grilla tipo app iOS — barra de cristal arriba, grilla de piezas, bandeja de pedido flotante abajo */
+:root{
+  --bg:#FADCDE; --surface:#FFFBF0; --fg:#2B2B2B; --topaz:#913939; --pink:#EAB7BA;
+  --muted:rgba(43,43,43,.62); --line:rgba(145,57,57,.14);
+  --gold:#D99B2E; --gold-grad:linear-gradient(90deg,#F6DF77,#F4D361 30%,#E7B646 60%,#D99B2E 80%,#D08F28);
+  --gold-soft:rgba(234,183,186,.38); --ok:#913939; --warn:#913939; --wa:#913939;
+  --glass:rgba(255,251,240,.62);
+  --display:"Inter",-apple-system,system-ui,sans-serif;
+  --ui:"Inter",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --r:22px; color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:15px;line-height:1.4;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--glass)}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:10px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--glass);backdrop-filter:saturate(1.6) blur(18px);-webkit-backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;gap:14px;padding-block:12px 10px}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand b{font-family:var(--display);font-weight:400;font-size:30px;letter-spacing:.32em;margin-right:-.32em}
+.brand span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.search{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+.search input{border:0;outline:0;background:none;font:inherit;color:var(--fg);width:100%;min-width:0}
+.search svg{flex:none;color:var(--muted)}
+.seg{display:flex;gap:6px;overflow-x:auto;padding-block:0 12px;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{flex:none;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:14px;color:var(--muted);transition:.2s}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.seg button small{opacity:.6;margin-left:4px;font-variant-numeric:tabular-nums}
+
+.tiers{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding-block:18px 6px;color:var(--muted);font-size:13px}
+.tiers strong{color:var(--fg);font-weight:600}
+.tiers .t{display:flex;gap:6px;align-items:baseline}
+.tiers .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);align-self:center}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:6px 14px;font-size:13px;color:var(--muted)}
+.toolbar select{font:inherit;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 10px}
+
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-bottom:140px}
+@media(min-width:620px){.grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}}
+@media(min-width:900px){.grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}}
+.card{background:var(--surface);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+@media(hover:hover){.card:hover{transform:translateY(-2px);box-shadow:0 10px 30px -18px rgba(60,45,10,.45)}}
+.ph{position:relative;aspect-ratio:4/5;max-width:100%;background:#fff;display:block;width:100%}
+.ph img{width:100%;height:100%;object-fit:contain;display:block}
+.badge{position:absolute;left:10px;top:10px;font-size:11px;padding:4px 8px;border-radius:999px;background:var(--gold-soft);color:var(--warn);font-weight:500}
+.info{padding:12px 12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.sku{font-size:11px;letter-spacing:.12em;color:var(--muted);font-variant-numeric:tabular-nums}
+.name{font-size:14px;font-weight:500;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.5em}
+.price{display:flex;align-items:baseline;gap:6px;margin-top:auto}
+.price b{font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.price span{font-size:11px;color:var(--gold);font-weight:600;letter-spacing:.06em}
+.sub{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.add{margin-top:6px;height:38px;border-radius:12px;background:var(--fg);color:var(--bg);font-weight:500;font-size:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+.step{margin-top:6px;height:38px;border-radius:12px;background:var(--gold-soft);display:flex;align-items:center;justify-content:space-between;padding:0 4px}
+.step button{width:34px;height:30px;border-radius:9px;font-size:18px;font-weight:500}
+.step output{font-weight:600;font-variant-numeric:tabular-nums}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:60px 0}
+
+/* bandeja */
+.tray{position:fixed;left:0;right:0;bottom:0;z-index:6;padding:0 max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));pointer-events:none}
+.traybar{pointer-events:auto;max-width:640px;margin:0 auto;background:var(--fg);color:var(--bg);border-radius:22px;padding:12px 14px 12px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 18px 40px -18px rgba(0,0,0,.55);transform:translateY(0);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.traybar[data-empty="1"]{transform:translateY(140%)}
+.traybar .l{flex:1;min-width:0}
+.traybar .l b{font-size:17px;font-variant-numeric:tabular-nums}
+.traybar .l small{display:block;font-size:12px;opacity:.72;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar{height:3px;border-radius:3px;background:rgba(255,255,255,.18);margin-top:7px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gold);transition:width .35s}
+.traybar .go{flex:none;background:var(--gold);color:#17150f;border-radius:14px;padding:10px 14px;font-weight:600}
+
+/* hojas */
+.scrim{position:fixed;inset:0;z-index:8;background:rgba(10,9,7,.45);opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;z-index:9;left:0;right:0;bottom:0;max-height:88%;background:var(--surface);border-radius:24px 24px 0 0;transform:translateY(105%);transition:transform .35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(min-width:760px){.sheet{left:50%;width:600px;margin-left:-300px}}
+.sheet.on{transform:translateY(0)}
+.grab{width:40px;height:5px;border-radius:5px;background:var(--line);margin:10px auto 4px}
+.sh-head{display:flex;justify-content:space-between;align-items:center;padding:6px max(18px,env(safe-area-inset-left,0px)) 10px}
+.sh-head h2{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.04em;margin:0}
+.x{width:32px;height:32px;border-radius:50%;background:var(--bg);font-size:18px}
+.sh-body{overflow:auto;padding:0 18px 12px;flex:1}
+.line{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.line img{width:56px;height:70px;object-fit:contain;background:#fff;border-radius:10px}
+.line .t{min-width:0}
+.line .t div{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.line .t small{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.line .step{margin:0;width:112px}
+.nudge{margin:14px 0 4px;padding:12px 14px;border-radius:14px;background:var(--gold-soft);font-size:14px}
+.nudge b{color:var(--warn)}
+.sum{display:grid;gap:6px;padding:14px 0 4px;font-size:14px;font-variant-numeric:tabular-nums}
+.sum div{display:flex;justify-content:space-between}
+.sum .tot{font-size:20px;font-weight:600}
+.sh-foot{padding:12px 18px 16px;border-top:1px solid var(--line);display:grid;gap:8px}
+.wa{height:52px;border-radius:16px;background:var(--wa);color:#fff;font-weight:600;font-size:16px;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.note{font-size:12px;color:var(--muted);text-align:center}
+.swap{font-size:13px;color:var(--muted);text-align:center}
+.swap button{color:var(--fg);font:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:4px 2px;cursor:pointer}
+.clear{font-size:13px;color:var(--muted);text-decoration:underline}
+
+/* detalle */
+.pd{display:grid;gap:16px}
+.pd .ph{border-radius:18px;overflow:hidden}
+.ptab{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ptab div{border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+.ptab small{display:block;font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.ptab b{font-size:16px;font-variant-numeric:tabular-nums}
+.ptab .hi{border-color:var(--gold);background:var(--gold-soft)}
+
+/* Marca FRADE (manual de uso): patrón, vidrio, logo */
+body{background:var(--bg)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background:url(patron.webp) center/cover no-repeat;pointer-events:none}
+.logo{height:34px;width:auto;color:var(--topaz);display:block}
+.brand span{color:var(--topaz);letter-spacing:.32em;font-weight:600;font-size:9.5px;margin-top:7px}
+header{border-bottom:1px solid rgba(255,255,255,.6)}
+.search{background:rgba(255,251,240,.75);border-color:var(--line);border-radius:14px}
+.seg button{background:rgba(255,251,240,.7);border-color:var(--line);color:var(--topaz)}
+.seg button[aria-pressed="true"]{background:var(--topaz);color:var(--surface);border-color:var(--topaz)}
+.hero{margin-top:16px;padding:16px 18px;border-radius:24px;background:var(--glass);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.7);box-shadow:0 18px 40px -26px rgba(145,57,57,.45);position:relative}
+.hero::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:var(--gold-grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.hero h1{margin:0 0 4px;font-size:19px;font-weight:600;color:var(--topaz);letter-spacing:-.01em}
+.hero .tiers{padding:6px 0 0;color:var(--fg)}
+.hero .tiers strong{color:var(--topaz)}
+.tiers .dot{background:var(--gold-grad)}
+.toolbar{color:var(--topaz);font-weight:500}
+.toolbar select{background:rgba(255,251,240,.8);border-color:var(--line);color:var(--topaz)}
+.card{background:var(--surface);border-color:rgba(255,255,255,.8);box-shadow:0 10px 28px -22px rgba(145,57,57,.55)}
+.price b{color:var(--topaz)}
+.price span{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+.add{background:var(--topaz);color:var(--surface);border-radius:999px;width:100%}
+.step{border-radius:999px;color:var(--topaz)}
+.badge{background:var(--surface);color:var(--topaz);border:1px solid var(--line)}
+.traybar{background:rgba(145,57,57,.92);color:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:26px;box-shadow:0 20px 44px -18px rgba(145,57,57,.7)}
+.bar{background:rgba(255,251,240,.22)}
+.bar i{background:var(--gold-grad)}
+.traybar .go{background:var(--gold-grad);color:#2B2B2B;border-radius:999px;padding:11px 16px}
+.sheet{background:var(--surface)}
+.sh-head h2{color:var(--topaz);font-weight:600;font-size:22px;letter-spacing:-.01em}
+.x{background:var(--gold-soft);color:var(--topaz)}
+.wa{background:var(--topaz);border-radius:999px}
+.nudge{background:var(--gold-soft);color:var(--fg)}
+.ptab .hi{border-color:var(--topaz);background:var(--gold-soft)}
+.scrim{background:rgba(43,43,43,.4)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand"><svg class="logo" role="img" aria-label="FRADE" xmlns="http://www.w3.org/2000/svg" viewBox="440 412 1036 256"><g fill="currentColor" fill-rule="nonzero"><path d="M843.86 449.39C842.11 445.46 838.21 442.93 833.90 442.93L730.28 442.93L730.28 445.03C730.28 445.03 744.98 446.83 744.98 460.93L744.98 615.13C744.98 629.23 730.28 631.03 730.28 631.03L730.28 632.83L780.68 632.83L780.68 631.03C780.68 631.03 765.98 629.23 765.98 615.13L765.98 539.53L797.78 539.53C810.98 539.53 818.48 542.53 824.48 558.43L826.28 558.43L826.28 517.33L824.48 517.33C818.48 533.53 810.98 536.23 797.78 536.23L765.98 536.23L765.98 446.23L809.48 446.23C822.98 446.23 831.38 454.03 841.88 470.53L853.28 470.53L843.86 449.39"/><path d="M917.18 556.63C916.88 556.63 916.58 556.93 916.28 556.93C907.88 559.63 898.58 561.43 888.98 562.33L888.98 446.23L916.58 446.23C947.78 446.23 970.58 467.83 970.58 497.83C970.58 526.63 948.08 547.03 917.18 556.63M991.88 618.43L977.18 574.03C972.38 558.73 955.88 552.43 937.28 553.03C965.48 541.03 991.88 521.23 991.88 497.83C991.88 460.33 958.58 442.93 927.98 442.93L853.28 442.93L853.28 445.03C853.28 445.03 867.98 446.83 867.98 460.93L867.98 615.13C867.98 629.23 853.28 631.03 853.28 631.03L853.28 632.83L903.68 632.83L903.68 631.03C903.68 631.03 888.98 629.23 888.98 615.13L888.98 565.63C897.08 565.33 906.38 563.53 916.58 560.53C942.38 553.93 953.78 565.63 961.28 588.73L970.88 618.43C974.48 629.83 961.58 631.03 961.58 631.03L961.58 632.83L1009.58 632.83L1009.58 631.03C1009.58 631.03 995.78 629.83 991.88 618.43"/><path d="M1059.52 571.01L1059.51 571.00L1090.29 476.45L1123.59 579.65L1124.79 582.95L1135.59 615.95C1137.52 621.99 1136.03 625.76 1133.70 628.11C1131.83 629.46 1129.22 630.40 1126.63 630.40L1117.03 630.40C1085.78 630.40 1059.52 602.63 1059.52 571.01M1157.79 615.95L1101.69 443.75L1079.49 443.75L1088.49 471.35L1041.09 617.15C1037.79 627.05 1028.49 631.85 1019.79 631.85L1019.79 633.65L1056.39 633.65L1056.39 631.85C1047.99 631.85 1041.39 627.05 1044.69 617.15L1055.79 582.95L1056.69 579.65L1056.77 579.43C1060.00 609.92 1085.88 633.78 1117.03 633.78L1150.75 633.66C1150.75 633.66 1150.75 633.65 1150.75 633.65L1177.59 633.65L1177.59 631.85C1177.59 631.85 1162.29 630.05 1157.79 615.95"/><path d="M1248.80 630.35L1225.70 630.35L1225.70 447.05L1248.80 447.05C1300.70 447.05 1317.49 503.15 1317.49 538.85C1317.49 574.25 1300.70 630.35 1248.80 630.35M1254.20 443.75L1189.99 443.75L1189.99 445.85C1189.99 445.85 1204.70 447.65 1204.70 461.75L1204.70 615.95C1204.70 630.05 1189.99 631.85 1189.99 631.85L1189.99 633.65L1254.20 633.65C1307.30 633.65 1340.59 591.05 1340.59 538.85C1340.59 486.65 1307.30 443.75 1254.20 443.75"/><path d="M1455.70 606.35C1445.20 622.85 1436.80 630.35 1423.30 630.35L1374.11 630.35L1374.11 520.85L1398.10 520.85C1411.30 520.85 1418.80 523.85 1424.80 539.75L1426.90 539.75L1426.90 498.65L1424.80 498.65C1418.80 514.85 1411.30 517.55 1398.10 517.55L1374.11 517.55L1374.11 447.05L1408.00 447.05C1421.20 447.05 1429.60 454.85 1440.10 471.35L1451.50 471.35L1439.50 443.75L1338.41 443.75L1338.41 445.85C1338.41 445.85 1353.11 447.65 1353.11 461.75L1353.11 615.95C1353.11 630.05 1338.41 631.85 1338.41 631.85L1338.41 633.65L1454.80 633.65L1467.10 606.35L1455.70 606.35"/><path d="M536.00 608.96C536.09 635.31 527.79 650.25 511.34 653.38C511.34 653.38 511.34 653.38 511.33 653.38C509.87 653.67 508.25 653.82 506.51 653.82C496.40 653.82 480.48 648.30 468.90 632.74C456.84 616.58 454.30 593.29 462.56 574.79C471.24 555.32 491.81 541.70 516.26 539.24L516.98 539.17C521.28 538.78 526.10 538.59 531.72 538.59C533.15 538.59 534.58 538.60 536.01 538.62L536.00 555.02C535.97 572.70 535.94 590.98 536.00 608.96M540.87 608.94C540.81 592.46 540.84 575.66 540.86 559.42L540.90 538.71L545.93 538.85C550.42 538.98 555.22 539.10 559.86 539.10L563.36 539.10L563.39 560.03C563.42 576.07 563.44 592.65 563.38 608.89C563.37 609.20 562.77 635.94 540.58 648.90C535.20 652.04 528.94 654.01 521.97 654.76C534.59 647.88 540.95 632.47 540.87 608.94M559.86 534.24C555.15 534.24 550.29 534.10 546.00 533.98L544.04 533.93C542.98 533.90 541.94 533.87 540.90 533.85C540.92 529.67 540.92 525.50 540.92 521.32L540.92 452.35C540.92 444.17 544.85 436.61 551.46 432.12L552.13 431.68L552.33 431.81C552.44 431.86 552.54 431.93 552.67 432.03L552.82 432.12C559.41 436.61 563.35 444.18 563.35 452.35L563.36 534.24L559.86 534.24M625.41 547.16C625.76 547.09 626.00 546.79 626.00 546.44L626.00 527.84C626.00 527.49 625.75 527.19 625.41 527.12C625.07 527.06 624.72 527.25 624.60 527.58C623.88 529.44 623.12 530.92 622.25 532.09C621.26 533.44 619.63 534.24 617.89 534.24L568.22 534.24L568.21 452.35C568.21 443.18 563.96 434.49 556.83 429.03C564.14 425.52 571.19 424.83 575.89 424.87L624.80 424.87C635.42 424.87 644.06 433.51 644.06 444.13L644.06 449.17C644.06 449.61 643.94 450.03 643.73 450.37C642.42 452.28 640.26 453.79 636.93 455.09C636.60 455.22 636.41 455.56 636.48 455.91C636.54 456.25 636.84 456.50 637.19 456.50L655.80 456.50C656.15 456.50 656.45 456.25 656.51 455.91C656.58 455.56 656.39 455.22 656.06 455.09C652.84 453.85 650.73 452.44 649.44 450.69C649.10 450.20 648.93 449.70 648.93 449.18L648.93 444.13C648.93 430.83 638.10 420.00 624.80 420.00L514.97 420.00C512.65 420.00 510.65 421.74 510.32 424.04C510.29 424.25 510.35 424.46 510.49 424.62C510.63 424.78 510.83 424.87 511.04 424.87L528.37 424.87C532.99 424.82 540.12 425.52 547.42 429.03C540.29 434.49 536.04 443.18 536.04 452.35L536.03 533.74L535.80 533.74C528.07 533.67 522.06 533.81 516.54 534.32L515.78 534.39C489.61 537.02 467.51 551.74 458.10 572.80C449.16 592.86 451.92 618.11 464.98 635.65C470.19 642.64 477.70 649.03 485.58 653.18C490.59 655.82 495.62 657.54 500.46 658.27C501.13 658.45 507.22 660.00 515.58 660.00C525.96 660.00 535.20 657.68 543.03 653.11C567.61 638.77 568.25 609.25 568.25 608.94C568.31 590.39 568.28 571.46 568.25 554.75L568.24 539.10L617.52 539.10C618.13 539.10 618.67 539.22 619.13 539.46C621.44 540.71 623.13 542.94 624.60 546.71C624.73 547.03 625.06 547.22 625.41 547.16"/></g></svg><span>CATÁLOGO MAYORISTA</span></div>
+      <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar pieza o SKU" autocomplete="off"></label>
+    </div>
+    <nav class="seg" id="seg" aria-label="Categorías"></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero"><h1>Arma tu pedido y envíalo por WhatsApp</h1><div class="tiers" aria-label="Precios por cantidad">
+    <span class="t"><i class="dot"></i>Precios por total de piezas surtidas</span>
+    <span class="t"><strong>1–2</strong> detalle</span>
+    <span class="t"><strong>3–5</strong> precio x3</span>
+    <span class="t"><strong>6+</strong> precio x6</span>
+  </div></section>
+  <div class="toolbar">
+    <span id="count"></span>
+    <select id="sort" aria-label="Ordenar"><option value="new">Lo más nuevo</option><option value="asc">Menor precio</option><option value="desc">Mayor precio</option></select>
+  </div>
+  <section class="grid" id="grid"></section>
+</main>
+
+<div class="tray"><div class="traybar" id="tray" data-empty="1">
+  <div class="l"><b id="tTot">$0</b><small id="tMsg"></small><div class="bar"><i id="tBar"></i></div></div>
+  <button class="go" id="openCart">Ver pedido</button>
+</div></div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="cart" aria-label="Tu pedido">
+  <div class="grab"></div>
+  <div class="sh-head"><h2>Tu pedido</h2><button class="x" data-close aria-label="Cerrar">×</button></div>
+  <div class="sh-body" id="cartBody"></div>
+  <div class="sh-foot">
+    <a class="wa" id="waBtn" href="#" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg><span id="waTxt">Enviar pedido por WhatsApp</span></a>
+    <div class="swap" id="swap"></div>
+    <div class="note">No es una compra inmediata. Tu vendedora confirma disponibilidad y te pide los datos para la factura.</div>
+  </div>
+</aside>
+
+<aside class="sheet" id="detail" aria-label="Detalle de la pieza">
+  <div class="grab"></div>
+  <div class="sh-head"><h2 id="dSku"></h2><button class="x" data-close aria-label="Cerrar">×</button></div>
+  <div class="sh-body" id="dBody"></div>
+</aside>
+
+<script>
+const DATA=[["AN001","Anillo Eslabones Ovales con Circones","AN",5000,6000,9500,1],["AN002","Anillo Triple Banda Entrelazada con Circones","AN",5000,7500,10500,1],["AN003","Anillo Ondas Entrelazadas con Circones","AN",5000,6500,8000,1],["AN004","Anillo Domo Acanalado","AN",5000,8000,12000,1],["AN005","Anillo Eslabones Anchos con Circones","AN",5000,6500,8000,1],["AN006","Anillo Clavo Tipo Cartier con Circones","AN",5000,6500,8000,1],["AN007","Anillo Doble Gota Orgánica","AN",5500,8500,12000,1],["AN008","Anillo Media Alianza con Circones","AN",6000,7500,10000,1],["AN009","Anillo Cuadrado Central con Circones","AN",5500,8500,12500,1],["AN010","Anillo Osito con Circones","AN",6000,7500,10000,1],["AN011","Anillo Domo con Bandas de Circones","AN",6000,7500,10000,1],["AN012","Anillo Clavo Doble con Circones","AN",6000,7500,10000,1],["AN013","Anillo Corona Dorada","AN",4500,5500,7000,1],["AN014","Anillo Corona Dorada Pequeña","AN",4500,5500,7000,0],["AN015","Anillo Media Alianza Doble con Circones","AN",6500,7500,10000,1],["AN016","Anillo Alianza Doble Borde con Circones","AN",6500,9000,13000,1],["AN017","Anillo Media Alianza Multilínea con Circones","AN",7500,9000,12000,1],["AN018","Anillo Eslabón Oval con Circones","AN",7500,9000,12000,1],["AN019","Anillo Cruces y Circones","AN",7500,10500,14500,1],["AN020","Anillo Domo Pavé con Circones","AN",7500,9000,12000,0],["AN021","Anillo Alianza Central con Circones","AN",7500,11500,15500,1],["AN022","Anillo Bandas Verticales","AN",7500,9000,12000,1],["AN023","Anillo Clavo Plateado con Circones","AN",7500,9000,12000,1],["AN024","Anillo Ondas Cruzadas","AN",7500,9000,12000,1],["AN025","Anillo Flor con Circones","AN",5500,7000,10000,1],["AN026","Anillo Doble con Estrella Colgante","AN",5500,7000,10000,1],["AN027","Anillo Ramas y Hojas con Circones","AN",7500,0,0,1],["AN028","Anillo Barra Pavé con Circones","AN",5500,0,0,1],["AN029","Anillo Corazón Volumen","AN",5000,6000,8000,1],["AN030","Anillo Hojas Cruzadas","AN",5500,0,0,1],["AN031","Anillo Cinta Ondulada","AN",5500,8500,12000,1],["AN032","Anillo Mariposa Dorada","AN",5500,6500,9000,1],["AN033","Anillo Domo Tejido con Circones","AN",6000,0,0,1],["AN034","Anillo Corazón Pavé con Circones","AN",6000,8500,12500,1],["AN035","Anillo Doble Banda Calada con Circones","AN",6000,0,0,1],["AN036","Anillo Domo Pavé Multifila","AN",6000,0,0,1],["AN037","Anillo Doble Punta con Circones","AN",6000,9500,13000,1],["AN038","Anillo Serpiente con Circones","AN",6000,0,0,1],["AN039","Anillo Doble Pluma con Circones","AN",6000,0,0,1],["AN040","Anillo Domo Multifila con Circones","AN",6500,10500,15000,1],["AN043","Anillo Hoja Calada","AN",7000,0,0,1],["AN044","Anillo Alianza Circones Multicolor","AN",5000,0,0,1],["AN045","Anillo Alianza Circones Rosados","AN",5000,0,0,1],["AN046","Anillo Alianza Circones Rosa y Lila","AN",5000,0,0,1],["AN047","Anillo Ondas Caladas","AN",5000,0,0,1],["AN048","Anillo Domo Acanalado con Circones","AN",5000,7500,10500,1],["AN049","Anillo Doble Óvalo Orgánico","AN",5500,0,0,1],["AN050","Anillo Infinito con Circones","AN",5000,0,0,1],["AN051","Anillo Cruz con Circones","AN",5500,6500,9000,0],["AN052","Anillo Estrella de Mar y Perla","AN",6000,9000,13000,1],["AN053","Anillo Corazón Pavé","AN",6500,0,0,1],["AN054","Anillo Clavo Curvo con Circones","AN",6500,0,0,1],["AN055","Anillo Hojas Dobles con Circones","AN",5500,7000,10000,1],["AN056","Anillo Circon Central Verde","AN",5000,0,0,1],["AN057","Anillo Alianza Circones Transparentes","AN",5000,0,0,1],["AN058","","AN",4000,7500,12000,1],["AN059","","AN",4500,7500,12000,0],["AN060","","AN",5000,7000,10000,0],["AN061","","AN",5000,7000,10000,1],["AN062","","AN",5000,7000,10000,1],["AN063","","AN",5000,7000,10000,1],["AN064","Anillo Flor","AN",5000,8000,12000,1],["AN065","","AN",5500,8500,12500,0],["AN066","","AN",7000,10500,15000,1],["AN067","","AN",5000,7500,10500,1],["AN071","","AN",5500,7500,10500,1],["AN073","Anillo Gucci Plano","AN",5500,8000,10000,0],["AR001","Aros Argolla Punta Triangular","AR",5500,7500,10500,0],["AR002","Aros Corazón Dorado","AR",5500,7000,10000,1],["AR003","Aros Gota Alargada","AR",7500,9000,15000,1],["AR004","Aros Gota Alargada Bicolor","AR",7500,8500,12000,1],["AR005","Aros Bola Dorada","AR",7500,8500,12000,1],["AR006","Aros Corazón Rosado","AR",7500,8500,12000,1],["AR007","Aros Corazón Rojo Metálico","AR",7500,8500,12000,1],["AR008","Aros Argolla Circones Multicolor","AR",5500,7500,12000,1],["AR009","Aros Sol con Perla","AR",5000,6000,7500,1],["AR010","Aros Nudo Acanalado","AR",5500,7000,8500,1],["AR011","Aros Bola Texturada","AR",4000,5000,6500,1],["AR012","Aros Cuadrados Tejidos","AR",4000,8500,12500,1],["AR013","Aros Corazón Texturado","AR",5500,8500,12500,1],["AR014","Aros Gota Volumen","AR",5000,6500,10000,1],["AR015","Aros Corazón Pequeño","AR",4000,6000,7000,1],["AR016","Aros Corazón Mediano","AR",4500,6500,7500,1],["AR017","Aros Corazón Estilizado","AR",4500,6500,8000,1],["AR018","Aros Bola Texturada con Circones","AR",4500,6500,7500,1],["AR019","Aros Argolla Sol con Circones","AR",4500,7500,10500,0],["AR020","Aros Argolla Bicolor con Circones","AR",4000,5000,6000,1],["AR021","Aros Argolla Torcida","AR",5000,6500,10000,1],["AR022","Aros Argolla Texturada","AR",6500,8000,10000,0],["AR023","Aros Argolla Calada con Circones","AR",4000,5000,7000,1],["AR024","Aros Bola Calada","AR",4000,5000,7000,0],["AR025","Aros Nudo Dorado","AR",5500,7000,9000,1],["AR026","Aros Mini Argolla Cuadrada","AR",5500,7000,9000,1],["AR027","Aros Mini Argolla Bicolor","AR",5500,7000,9000,1],["AR028","Aros Corazón Pavé Cuadrado","AR",7500,9000,12000,1],["AR029","Aros Mini Sol con Circones","AR",4500,6500,10000,0],["AR030","Aros Argolla Circones Rosados","AR",4000,5000,8000,1],["AR031","Aros Corazón con Circones","AR",3500,5500,10000,1],["AR032","Aros Argolla Ancha Lisa","AR",5500,7500,12000,1],["AR033","Aros Argolla Acanalada","AR",6000,0,0,1],["AR034","Aros Flor con Circones","AR",7000,8500,11000,1],["AR035","Aros Flor Rosada Colgante","AR",6600,0,0,0],["AR036","Aros Mini Argolla Lisa","AR",4500,7500,11500,0],["AR037","Aros Argolla Óvalo Calado","AR",4000,0,0,1],["AR038","Aros Argolla Tornillo","AR",4500,0,0,1],["AR039","Aros Espiga Doble","AR",5500,8500,12500,1],["AR040","Aros Osito","AR",5000,0,0,1],["AR041","Aros Argolla Circones Rosa y Azul","AR",4500,0,0,1],["AR042","Aros Argolla Texturada Mediana","AR",4500,7500,12000,0],["AR043","Aros Argolla Texturada Grande","AR",4500,0,0,1],["AR044","Aros Argolla Doble Fina","AR",5000,8500,12000,1],["AR045","Aros Argolla Multicolor Pequeña","AR",5800,8800,12800,1],["AR046","Aros Argolla Multicolor Mediana","AR",5800,8500,12000,1],["AR047","Aros Argolla Gota y Bola","AR",6000,8500,12000,1],["AR048","Aros Colgantes Perlas en Racimo","AR",4500,6000,10000,1],["AR049","Aros Cerezas Rojas Dobles","AR",4500,0,0,1],["AR050","Aros Argolla Doble Aro","AR",4500,0,0,1],["AR051","Aros Argolla Doble Aro Grande","AR",5500,0,0,1],["AR052","Aros Lazo Dorado","AR",4600,0,0,1],["AR053","Aros Corazón Negro","AR",4500,0,0,1],["AR054","Aros Argolla Gucci Plano","AR",5500,7500,10000,0],["AR055","Aros Elefante","AR",4000,5500,6500,1],["AR056","Aros Disco Redondo","AR",4000,0,0,1],["AR057","Aros Cuadrado Liso","AR",4000,0,0,1],["AR058","Aros Cerezas Rojas","AR",5000,6500,8000,1],["AR059","Aros Óvalo con Perla","AR",6300,7500,10000,1],["AR060","Aros Gota Plegada","AR",6000,8000,12000,1],["AR061","Aros Argolla Triple Lisa","AR",6800,7500,12000,1],["AR062","Aros Flor Pavé","AR",6600,0,0,1],["AR063","Aros Cerezas Largos","AR",5000,6500,9500,1],["AR064","Aros Cerezas Largos Finos","AR",5000,0,0,1],["AR065","Aros Argolla Multicolor","AR",5000,7500,12000,1],["AR066","Aros Corazón Nacarado","AR",5500,7500,10000,1],["AR067","Aros Flor Rosa","AR",5500,0,0,1],["AR068","Aros Argolla Multicolor Fina","AR",5500,7500,12000,0],["AR069","Aros Argolla Bolas Doradas","AR",6000,0,0,1],["AR070","Aros Argolla Bolas Doradas Medianas","AR",6000,0,0,1],["AR071","Aros Punto Gucci Peq.","AR",3000,5000,9000,1],["AR072","Aros Punto Gucci Med.","AR",4000,6000,10000,1],["AR073","Aros Argolla Bolitas","AR",6500,7500,13000,1],["AR074","Aros Argolla Corazones Calados","AR",4500,6500,10000,1],["AR075","","AR",4000,6000,10000,1],["AR076","","AR",4500,7500,12000,1],["AR077","Aros Corazón Dorado Pequeño","AR",5000,8000,12000,0],["AR078","","AR",4500,7500,12000,1],["AR080","","AR",4500,7500,12000,1],["AR081","","AR",4500,7500,12000,1],["AR082","","AR",4500,7500,12000,1],["AR083","","AR",4500,7500,12000,1],["AR084","","AR",4500,7500,12000,1],["AR085","","AR",4500,7500,12000,1],["AR086","","AR",5500,8500,13000,1],["AR087","","AR",4500,7500,12000,1],["AR088","","AR",4500,7500,12000,1],["AR089","","AR",5500,8500,13000,1],["AR090","","AR",5500,8500,13000,1],["AR092","","AR",5500,8500,13000,0],["AR093","","AR",5500,8500,13000,1],["AR095","","AR",4500,7500,12000,1],["AR096","","AR",4500,7500,12000,1],["AR108","Aros Argollas con Circones","AR",4500,6500,10000,1],["AR109","Aros Flor 3 Colores","AR",4500,6500,10000,1],["AR110","Aros Argollas Peq. con Circones","AR",4000,6000,8000,0],["AR111","Aros Corazon Rojo","AR",4500,6500,10000,1],["AR112","Aros con Perlas y Circones","AR",4500,6500,10000,0],["AR113","Aros Redondos con Circones","AR",4500,6500,10000,1],["AR114","Argollas Peq.","AR",4000,6000,8000,0],["AR115","Aros Balin 8mm Facetado","AR",4000,6000,10000,1],["AR116","Argollas Peq. con Circones 16mm","AR",4000,8000,10000,0],["CO001","Collar Corazón Volumen","CO",5500,9000,14000,1],["CO002","Collar Corazón Estilizado","CO",5500,7500,15000,1],["CO003","Collar Ají Rojo","CO",5500,8000,15000,1],["CO004","Collar Corazón Liso","CO",5500,7500,12000,1],["CO005","Collar Corazón Rojo","CO",7500,9000,13000,1],["CO006","Collar Cadena Corazones Calados","CO",7500,9000,13000,0],["CO007","Collar Cruz Clavo","CO",7500,8500,14000,1],["CO008","Collar Punto de Luz Rojo","CO",8000,9000,14000,1],["CO009","Collar Cruz Lisa","CO",8000,9000,14000,1],["CO010","Collar Cruz con Circones","CO",8000,9000,14000,1],["CO011","Collar Cerezas y Osito","CO",8000,9000,14000,1],["CO012","Collar Osito con Circones","CO",8500,9500,15000,1],["CO013","Collar Osito Dorado","CO",8500,13000,20000,1],["CO014","Collar Osito con Circones Azules","CO",8500,9500,15000,1],["CO015","Collar Flor y Aro","CO",10000,12000,18000,1],["CO016","Collar Cadena Eslabón Fino","CO",6500,7500,9000,1],["CO017","Collar Perlas con Dije Central","CO",5500,9000,15000,1],["CO018","Collar Perlas y Gota Nacarada","CO",5500,7500,12000,1],["CO019","Collar Cadena Corazones Negros","CO",6500,7500,14000,1],["CO020","Collar Charms Multicolor","CO",6500,10000,13500,1],["CO021","Collar Cadena Bolitas Doradas","CO",9000,11000,20000,1],["CO022","Collar Love con Perlas","CO",11000,13000,16000,1],["CO023","Collar Caracola","CO",13000,15000,20000,1],["CO024","Collar Cadena Tejido Chino 45cm + Extensor","CO",5000,7500,9000,1],["CO025","Collar Cruz Delgada","CO",5500,7500,15000,1],["CO026","Collar Cruz Rústica","CO",5500,7500,12000,1],["CO027","Collar Cerezas Rojas","CO",5500,7500,12000,1],["CO028","Collar Dije Niña","CO",7000,9000,15000,1],["CO029","Collar Dije Niño","CO",7000,9000,11000,1],["CO030","Collar Osito Pavé","CO",7000,9000,11000,1],["CO031","Collar Corazón Azul","CO",8000,9000,14000,1],["CO032","Collar Corazón Negro","CO",8000,9000,14000,1],["CO033","Collar Medalla Dr. José Gregorio Hernández","CO",6500,8500,16000,1],["CO034","Collar Mariposa","CO",8000,10000,14000,1],["CO035","Collar Cruz Rústica Grande","CO",9000,10000,14000,1],["CO036","Collar Flor Pavé","CO",11000,17000,25000,1],["CO037","Collar Corazón y Círculo Pavé","CO",11000,14000,20000,1],["CO038","Collar Corazón Liso Grande","CO",12000,15000,20000,0],["CO039","Collar Corazón Rojo Punto de Luz","CO",5500,7500,15000,1],["CO040","Collar Corazón Multicolor","CO",5500,7500,12000,1],["CO041","Collar Gota Verde y Perla","CO",5500,7500,12000,1],["CO042","Collar Conejo con Circones","CO",6500,8000,12000,1],["CO043","Collar Perla Colgante","CO",9000,11000,15000,1],["CO044","Collar Cadena Plana en V","CO",6500,7500,9000,1],["CO045","Collar Cadena Plana Curva","CO",6500,7500,9000,1],["CO046","Collar Osito Dorado Grande","CO",7500,9000,11000,1],["CO047","Collar Ojo Turco con Circones","CO",5500,10500,15000,0],["CO048","Collar Ají Rojo Largo","CO",5500,7500,15000,1],["CO049","Collar Llave con Corazón Rojo","CO",5500,7500,15000,1],["CO050","Collar Corazón Rojo Esmaltado","CO",5500,7500,15000,1],["CO051","Collar Fe","CO",5500,7500,15000,0],["CO053","Collar Candado y Llave","CO",6500,8500,16000,0],["CO056","Collar Cactus Multicolor","CO",8500,12000,16000,1],["CO057","Collar Langosta Roja","CO",8500,12000,16000,1],["CO058","Collar Corazón Rojo con Corona","CO",5500,7500,12000,1],["CO059","Collar Corazón Rojo con Lazo","CO",5500,7500,12000,1],["CO060","Collar Corazón Rojo con Alas","CO",5500,8500,15000,1],["CO061","Collar Corazón Rojo Pavé","CO",5500,7500,12000,1],["CO062","Collar Corazón Rojo Flecha","CO",5500,7500,12000,1],["CO063","Collar Cadena Eslabón con Corazón","CO",6500,7500,10000,1],["CO064","Collar Cerezas con Circones","CO",5500,7500,12000,1],["CO065","Collar Cerezas y Perla","CO",5500,7500,12000,1],["CO066","Collar Virgen con Circones","CO",7500,9000,13000,1],["CO067","Collar Rosario Virgen y Cruz","CO",11500,14000,18000,1],["CO068","Collar Perlas con Bolas Doradas","CO",11500,14000,20000,1],["CO069","Collar Corazón Rosado y Perlas","CO",11500,14000,20000,1],["CO070","Collar Corazón Rojo Doble","CO",11500,14000,20000,1],["CO071","Collar Charms Estrellas","CO",14500,18000,25000,1],["CO072","Collar Corazón Rojo y Cerezas","CO",14500,18000,25000,1],["CO073","Collar Charms Corazones Rojos","CO",20000,25000,35000,1],["CO075","Collar Cadena Eslabones Rectangulares","CO",6500,7500,10000,1],["CO076","Collar Cadena Tejido Diamante","CO",6500,10000,15000,1],["CO077","Collar Cadena Cubana Fina","CO",6500,7500,10000,1],["CO078","Collar Osito Pavé Grande","CO",7500,8500,14000,1],["CO079","Collar Osito Pavé Mediano","CO",7500,8500,14000,1],["CO080","Collar Flor Rosada con Flecha","CO",5500,7500,15000,1],["CO081","Collar Osito Dorado con Circones","CO",7500,8500,14000,1],["CO082","Collar Flor Rosa y Gota","CO",6500,8500,16000,0],["CO083","Collar Helado Rosado","CO",6500,0,0,1],["CO084","Collar Piña y Palmera","CO",6500,0,0,1],["CO085","Collar Flor Nacarada","CO",5500,7500,12000,1],["CO086","Collar Medalla y Flor","CO",8000,0,0,1],["CO087","Collar Sagrado Corazón","CO",5800,0,0,0],["CO088","Collar Dije Niña Pequeña","CO",6500,0,0,1],["CO089","Collar Corazón Nacarado","CO",6700,10500,15000,1],["CO090","Collar Cereza Verde","CO",6700,0,0,1],["CO091","Collar Ojo Turco con Circones","CO",8000,0,0,1],["CO092","Collar Charms Estrella y Corazón","CO",8000,0,0,1],["CO093","Collar Corazón y Estrella","CO",8000,0,0,1],["CO094","Collar Corazón Calado","CO",9900,0,0,1],["CO095","Collar Osito Calado","CO",9900,0,0,1],["CO096","Collar Perlas y Aros","CO",10500,16000,23500,1],["CO097","Collar Cadena Serpiente","CO",6500,8500,15000,1],["CO098","Collar Perlas Multicolor","CO",9500,12000,15000,1],["CO099","Collar Perlas Colgantes","CO",10500,0,0,1],["CO100","Collar Multicolor con Medalla","CO",13000,0,0,1],["CO101","Collar Multicolor con Mariposa","CO",13000,0,0,1],["CO102","Collar Perlas con Mariposa","CO",15000,0,0,1],["CO103","Collar Charms Flor y Estrella","CO",8500,13500,20000,0],["CO104","Collar Eslabones Rosados","CO",7500,0,0,1],["CO105","Collar Cereza y Flor","CO",5500,7500,12000,1],["CO106","Collar Flor Rosada Pavé","CO",6500,10000,15000,1],["CO107","Collar Doble Corazón Rojo","CO",6500,0,0,1],["CO108","Collar Medalla Rosada","CO",4700,0,0,1],["CO109","Collar Gema Azul","CO",4700,0,0,1],["CO110","Collar Gema Negra","CO",5000,0,0,1],["CO111","Collar Cerezas Rojas Dobles","CO",5500,8000,15000,1],["CO112","Collar Flor Pequeña","CO",7300,0,0,1],["CO113","Collar Corazón Contorno","CO",6500,8500,15000,1],["CO114","Collar Ojo Turco Redondo","CO",5500,0,0,1],["CO116","Collar Corazón Calado y Perlas","CO",15000,18000,20000,1],["CO117","Collar Corazón Contorno y Cadena","CO",17000,0,0,1],["CO118","Collar Charms Corazones Multicolor","CO",5500,0,0,1],["CO119","Collar Charms Multicolor con Osito","CO",7500,0,0,1],["CO120","Collar Perlas Multicolor con Corazón","CO",6500,9500,15000,1],["CO121","Collar Charms Multicolor con Medalla","CO",6500,0,0,1],["CO122","Collar Corazones Multicolor","CO",7500,0,0,1],["CO123","Collar Cruz Pequeña","CO",5000,7000,9000,1],["CO124","Collar Sagrado Corazon","CO",5500,7500,15000,1],["CO125","Collar Planeta con Circones","CO",6500,8000,15000,1],["CO126","Collar Libélula con Circones","CO",6500,0,0,1],["CO127","Collar Tortuga con Circones","CO",6500,9500,15000,1],["CO128","Collar Multicolor con Osito","CO",7000,0,0,1],["CO129","Collar Multicolor Delicado","CO",8500,12000,16500,1],["CO130","Collar Corazón Contorno y Charms","CO",9000,0,0,1],["CO131","Collar Multicolor con Corazón Rosa","CO",8500,0,0,1],["CO132","Collar Cerezas Rojas Laterales","CO",9500,0,0,1],["CO133","Collar Balines 3 Oros","CO",11500,13500,20000,1],["CO134","Collar Mariquita Roja","CO",6500,8000,15000,1],["CO135","Collar Estrella de Mar","CO",6500,0,0,1],["CO136","Collar Corazón Orgánico","CO",6500,0,0,1],["CO137","Cadena Gucci 50 y 55cm","CO",8500,13000,18000,1],["CO138","Collar Frutilla Roja","CO",5500,8500,15000,1],["CO139","","CO",5500,7500,15000,1],["CO140","Cadena con Dije Estrella de Mar","CO",5500,7500,15000,1],["CO141","","CO",6500,8500,15000,1],["CO142","","CO",6500,8500,15000,1],["CO143","","CO",6500,8500,15000,1],["CO144","","CO",8000,12000,17000,1],["CO145","Collar Mariposa Pequeña","CO",5500,7500,15000,1],["CO146","","CO",5500,7500,15000,1],["CO147","Collar Estrella de Mar con Perla","CO",5500,7500,15000,1],["CO148","","CO",5500,8500,15000,1],["CO149","Collar Luna","CO",5500,7500,15000,1],["CO150","","CO",6500,8500,15000,1],["CO151","","CO",6500,8500,15000,1],["CO152","","CO",5500,7500,15000,1],["CO153","Collar Corazon Inflado","CO",5500,7500,15000,1],["CO154","Collar Elefante","CO",5500,7500,15000,1],["CO155","Collar San Miguel Arcangel","CO",5500,7500,15000,1],["CO156","","CO",6500,8500,15000,1],["CO157","","CO",6500,8500,15000,1],["CO161","Collar Venezuela","CO",6500,8500,16000,0],["CO162","Collar I Love Venezuela","CO",6500,8500,16000,1],["CO163","Collar Mapa Venezuela","CO",6500,8500,16000,1],["CO167","Collar Luna Liso","CO",5500,7500,15000,1],["CO170","","CO",5000,7000,10000,1],["CO173","Collar Bandera Venezuela","CO",6500,8500,16000,0],["CO174","Collar Avion Camara Viaje","CO",6500,8500,16000,1],["CO175","Cadena Grumet 45cm con Dije San Miguel Arcángel","CO",7500,9500,16000,1],["CO182","Cadenas de Hombre 60cm con Dije Cristo","CO",8500,13000,18000,1],["CO183","Cadena Colombia","CO",6500,8500,15000,1],["CO184","Cadena Tipo Cartier con Dije Saco de Dinero 50cm","CO",6500,8500,15000,1],["CO185","Cadena Cruz de Venezuela Fe","CO",6500,8500,15000,1],["CO186","Cadena Tejido Chino 50cm Ojo Turco + Rosca + Turca + Billete","CO",9900,15000,20000,0],["CO188","Cadena Tejido Chino 55cm + Dije San Benito Hombre","CO",8500,13500,18500,1],["CO189","Collar Mapa Venezuela Tricolor Corazon","CO",5500,7500,15000,0],["CO190","Collar Colgante Pez","CO",6500,8500,16000,1],["CO191","Collar Venezuela con Circones","CO",6500,8500,16000,1],["CO192","Cadena con Dije Dios","CO",6500,9500,16000,1],["CO193","Cadena con Dije Redondo Cruz","CO",6500,9500,16000,1],["CO196","Cadena Gucci 55cm Dije Rolex","CO",10000,15000,20000,1],["CO197","Cadena Gucci 55cm Dije Cruz","CO",10000,15000,20000,1],["CO198","Cadena Tejido Chino 50cm + Dije VC","CO",7500,9500,16000,1],["CO199","Cadena Tejido Chino 50cm + Dije Virgen María","CO",7500,12500,18000,1],["CO999","Collar Chamina","CO",6500,10000,15000,1],["PU001","Pulsera Cadena Corazones","PU",8500,10000,14000,0],["PU002","Pulsera Bolas Tricolor","PU",5000,6000,8000,1],["PU003","Pulsera Bolas Doradas Texturadas","PU",6000,10500,14500,1],["PU004","Pulsera Bolas Bicolor","PU",6000,7500,10000,1],["PU005","Pulsera Bolas y Perlas con Aro","PU",7000,10500,15000,1],["PU006","Pulsera Bolas Bicolor Grandes","PU",9000,10000,13000,1],["PU007","Pulsera Perlas y Bolas Doradas","PU",9000,13000,18000,1],["PU008","Pulsera Perlas con Estrella y Medalla","PU",9000,10000,13000,1],["PU009","Pulsera Corazón Nacarado","PU",7500,12500,17000,1],["PU010","Pulsera Doble Tubo con Circones","PU",4000,5000,6500,1],["PU011","Pulsera Bolas Tricolor Pequeñas","PU",7500,10500,15000,1],["PU012","Pulsera Bolitas Doradas","PU",7000,9000,15000,0],["PU013","Pulsera Bolas con Charms","PU",7000,9000,15000,1],["PU014","Pulsera Eslabones con Ojo Turco","PU",8000,10000,13000,1],["PU015","Pulsera Hilo Rojo con Medalla","PU",6000,8000,12000,1],["PU016","Pulsera Rígida Clavo","PU",15000,18000,25000,1],["PU017","Pulsera Eslabones Trenzados Ancha","PU",8000,9000,13000,1],["PU018","Pulsera Eslabones Trenzados Fina","PU",10500,13000,17000,1],["PU019","Pulsera Love Bicolor","PU",11000,13000,20000,1],["PU020","Pulsera Rígida con Charms","PU",11500,14000,18000,1],["PU021","Pulsera Eslabones Rectangulares","PU",6500,8000,15000,1],["PU022","Pulsera Perlas y Cadena","PU",6500,10500,15500,1],["PU023","Pulsera Cadena Fina con Dije","PU",7000,8500,13000,1],["PU024","Pulsera Cadena Fina con Mano","PU",7000,8500,13000,1],["PU025","Pulsera Tipo Pandora","PU",6500,9500,13000,0],["PU026","Pulsera Cadena con Medalla Espiral","PU",8000,10000,14000,1],["PU027","Pulsera Cadena con Medalla Corazón","PU",8000,10000,14000,1],["PU028","Pulsera Cadena con Corazón Calado","PU",9000,10000,15000,1],["PU029","Pulsera Cadena Eslabón y Aro","PU",9000,10000,15000,1],["PU030","Pulsera Bolas Doradas","PU",7000,9000,15000,1],["PU031","Pulsera Bolas con Corazón","PU",9500,11000,15000,0],["PU032","Pulsera Charms Estrellas","PU",10500,13500,18000,1],["PU033","Pulsera Bolas Rojas con Cerezas","PU",10500,13500,18000,1],["PU034","Pulsera Cadena con Corazón Rojo","PU",12000,14000,20000,1],["PU035","Pulsera Cerezas y Corazón Rojo","PU",14000,16000,22000,1],["PU036","Pulsera Corazón Rojo Colgante","PU",15000,18000,26000,1],["PU038","Pulsera Rígida Media Barra","PU",15000,18000,22500,1],["PU039","Pulsera Hilo Azul con Bandera Venezuela y Doctor JGH","PU",7000,8000,14000,1],["PU040","Pulsera Doble Eslabón con Dije","PU",9500,13000,16000,1],["PU041","Pulsera Eslabón Ancho","PU",13000,16500,25000,1],["PU042","Pulsera Eslabón Rectangular Plana","PU",4500,6000,10000,1],["PU043","Pulsera Bolas con Osito","PU",7500,8500,12000,1],["PU044","Pulsera Bolas con Osito y Corazón","PU",7500,9000,13000,1],["PU045","Pulsera Bolas con Niña","PU",8000,9000,13000,1],["PU046","Pulsera Bolas Rojas con Niña","PU",8000,9000,13000,1],["PU047","Pulsera Hilo Negro con Balines","PU",5000,7000,12000,0],["PU048","Pulsera Bolas Multicolor con Bandera Venezuela","PU",7000,9000,14000,0],["PU049","Pulsera Venezuela","PU",7000,8000,14000,1],["PU050","Pulsera Perlas con Corazón y Medalla","PU",7500,8500,14500,1],["PU051","Pulsera Perlas con Estrella","PU",6000,7000,11500,0],["PU052","Pulsera Hilo Azul con Bolas Doradas","PU",6000,8000,12000,0],["PU053","Pulsera Osito","PU",6000,9500,12000,1],["PU054","Pulsera Bolas con Corazón Rojo","PU",12000,14000,18000,1],["PU055","Pulsera Bolas con Charms Dorados","PU",13000,15000,20000,1],["PU056","Pulsera Cadena Corazones Pequeños","PU",5500,0,0,1],["PU057","Pulsera Perlas Blancas y Grises Fe","PU",6000,8500,12000,0],["PU058","Pulsera Perlas Blancas con Dije Pequeño","PU",6200,7500,10000,1],["PU059","Pulsera Perlas con Charms Multicolor","PU",6700,0,0,1],["PU060","Pulsera Perlas Bicolor con Flor","PU",7000,0,0,1],["PU061","Pulsera Bolas Bicolor con Corazón","PU",7500,0,0,0],["PU062","Pulsera Bolas Bicolor con Cisne","PU",8000,0,0,1],["PU063","Pulsera Cadena con Estrellas","PU",8500,0,0,1],["PU064","Pulsera Hilo Negro Multicolor","PU",5500,6500,8500,1],["PU065","Pulsera Hilo Rojo con Cadena Dorada","PU",5000,6500,8000,0],["PU066","Pulsera Hilo Negro con Cadena Dorada","PU",5000,6500,8000,1],["PU067","Pulsera Hilo Rojo Multicolor","PU",5000,6500,8000,1],["PU068","Pulsera Eslabones Multicolor","PU",5500,7500,12500,1],["PU069","Pulsera Doble Cadena Delicada","PU",6300,0,0,1],["PU070","Pulsera Bolas Multicolor Pastel","PU",6000,8000,12000,1],["PU071","Pulsera Perlas con Charms Dorados","PU",6300,10000,14000,1],["PU072","Pulsera Corazones Rojos","PU",6300,7500,10000,1],["PU073","Pulsera Cadena con Bolitas","PU",7200,0,0,1],["PU074","Pulsera Rígida con Charms Multicolor","PU",17000,0,0,1],["PU075","Pulsera Rígida con Charms Frutales","PU",17000,0,0,1],["PU076","Pulsera Cono y Cerezas","PU",5500,8500,13500,1],["PU077","Pulsera Perlas con Corazón","PU",5800,7500,12000,1],["PU078","Pulsera Corazones Multicolor Grandes","PU",6300,10500,15000,1],["PU079","Pulsera Cadena Rectangular Fina","PU",6400,9500,14000,1],["PU080","Pulsera Multicolor Pastel","PU",7500,10500,15000,1],["PU081","Pulsera Cadena con Circones Multicolor","PU",7200,8000,13000,1],["PU082","Pulsera Cadena con Circones Rosados","PU",7200,8000,13000,1],["PU083","Pulsera Cadena Dorada Delicada","PU",7200,0,0,1],["PU084","Pulsera Cadena Cubana Fina","PU",5500,7000,12000,1],["PU085","Pulsera Hilo Negro con Medalla","PU",7000,0,0,1],["PU086","Pulsera Hilo Negro con Medalla Alargada","PU",7000,0,0,1],["PU087","Pulsera Tipo Gucci","PU",5500,8000,12000,0],["PU088","Pulsera Estrellas Multicolor","PU",7000,0,0,1],["PU089","Pulsera Estrellas Multicolor Dorada","PU",5500,0,0,1],["PU090","Pulsera Estrellas Multicolor con Charms","PU",5500,10500,13500,1],["PU091","Pulsera Corazones Pastel","PU",5500,6500,11000,1],["PU092","Pulsera Triple Cadena Dorada","PU",7000,8500,14000,1],["PU093","Pulsera Hilo Rojo con Corazón","PU",5500,9500,13500,0],["PU094","Pulsera Ojos Turcos Azules","PU",6500,8000,12000,1],["PU095","Pulsera Rígida Love","PU",12000,0,0,1],["PU096","Pulsera Rígida Clavo Dorada","PU",14500,0,0,1],["PU097","","PU",4500,7500,10000,1],["PU098","","PU",4500,7500,10000,1],["PU099","","PU",6000,9500,13000,1],["PU100","","PU",7000,10500,15000,1],["PU101","","PU",7000,10500,15000,1],["PU102","","PU",7000,10500,15000,1],["PU103","","PU",6500,10000,13000,1],["PU104","","PU",6300,9000,12000,0],["PU105","","PU",6500,8500,15000,1],["PU106","","PU",5500,9000,13500,1],["PU107","","PU",5500,9000,13500,1],["PU108","","PU",5500,9000,13500,1],["PU109","","PU",5500,9000,13500,1],["PU110","","PU",6500,10500,15500,1],["PU111","","PU",6000,10000,14000,1],["PU112","Pulsera Avion Tricolor","PU",7000,9000,14000,1],["PU113","Pulsera Dios Tricolor","PU",7500,9000,15000,1],["PU122","Pulsera Roja San Benito","PU",7500,9000,15000,1],["PU123","Pulsera Tejido Rojo + Gucci","PU",5500,8500,12500,1],["PU124","Pulsera Hombre","PU",6500,9500,12000,1],["PU125","Pulsera Hombre Balines Facetados","PU",8000,10000,15000,1],["PU126","Pulsera San Benito Rojo o Negro Tina","PU",6500,9500,12000,0],["PU127","Pulso Hombre 19cm","PU",6000,8500,12000,0]];
+const IV={"CO197":"75903c","CO196":"c1c4df","CO175":"2c6da4","PU041":"6e3952","CO125":"957f4f","AN012":"220a87","CO120":"8410c9","CO163":"d407ae","PU005":"61fc15","CO040":"59bbe0","CO114":"5cc5f2","CO124":"cb98c0","CO141":"cb4c23","AN040":"8786e9","AN033":"57230b","PU089":"5e6c3f","CO010":"683966","AN048":"c0c62b","AN017":"a74db5","CO146":"ad5dad","CO151":"0b4316","AR065":"6d4634","AN010":"5e6e2b","CO012":"c584d0","AN052":"7c4bc0","AN071":"3c40d1","AR087":"c86695","CO188":"1793a8","PU126":"1ba74f","CO079":"eb27fe","AR089":"e58508","AN001":"03c81d","AN026":"5b1cdc","CO059":"5982d3","AR022":"86e5b3","CO064":"792056","CO088":"ccd1f8","AR091":"7a178f","PU032":"04779d","AR072":"397902","CO033":"5a9b80","AN044":"857518","AR061":"8baf86","AR066":"fed8c9","CO086":"f2f464","CO068":"00e746","CO145":"d906db","AN060":"f457a8","AR116":"2e9f43","CO027":"c5e501","CO076":"89ccaa","PU020":"9d33a8","CO167":"2c1de9","CO095":"440014","AR028":"9f10ae","PU033":"514ead","AR027":"cb4c92","PU088":"0117f9","AR063":"70be62","AR080":"5422e8","CO162":"6f4a7b","CO121":"ebda40","AR076":"a503c8","AR078":"80a81d","AR052":"0f7246","AR008":"21c041","AN022":"0a1574","AR075":"90b387","AN023":"d23370","AR114":"ebda27","CO069":"01fd18","PU071":"3754aa","PU006":"5d48a3","AN027":"2e7f2d","AN018":"2f26d6","AR011":"d76168","CO073":"0e7d98","AR014":"d04e34","CO106":"bd827f","PU067":"82ba44","AR069":"7422d2","AR085":"6d6557","PU009":"d1d9de","AR003":"db8ebf","AR012":"83fa35","CO070":"efe05e","AN034":"6a5c76","AR057":"455f4f","PU022":"80d01e","CO043":"bfd0ec","PU105":"c8bc03","CO037":"c892ce","CO174":"f2cb34","AR009":"993611","CO087":"551042","PU098":"696909","AR090":"e688ce","CO098":"c5be7a","PU081":"bf4cb1","AR013":"f31169","CO190":"281d3e","AN006":"e6a6dd","CO128":"2cdeb5","AN004":"6792fd","AN069":"4b52e5","PU026":"78f782","PU078":"36c865","AN029":"662bf5","CO062":"627a0b","CO198":"e24e8c","CO096":"962f3e","PU097":"0972f8","AN070":"a60fcf","AN073":"84f64c","AR050":"679779","PU113":"9dc0b2","AN058":"58cbe5","CO048":"2daf9d","CO020":"09ad3f","CO056":"f9f379","AR042":"d7aa22","PU047":"6900cf","PU004":"bca263","CO118":"d1bad2","AR037":"9db63e","AN061":"4f7826","PU092":"a0981b","PU019":"c3e5b5","PU099":"458737","AR070":"97d91c","PU100":"b3367c","PU059":"3b1d35","AR093":"f4677d","AN036":"796fac","CO183":"18672d","CO153":"56791f","AN051":"f0cb6f","PU061":"4ad1a1","AR018":"0c97e8","AR004":"b22a29","CO075":"df38e9","PU057":"ff5a24","CO005":"59f256","AN064":"47a6d8","CO111":"0e4378","AN047":"03719a","CO091":"248a25","PU058":"4d1d57","AR038":"ed3f90","PU075":"7c0ba1","CO034":"d19039","PU054":"c84994","CO142":"586c9f","AR108":"0dfb32","AR045":"580f42","CO108":"eadd09","CO132":"de6213","PU080":"eef9f1","AR079":"e7dfe1","CO045":"5e0e74","PU015":"4b8339","CO078":"dbf391","CO103":"af9312","AR073":"f9ac41","CO007":"94b0b3","PU085":"480a3f","CO089":"07675e","CO107":"827667","PU102":"c15fab","PU046":"265e73","AR088":"c42e23","PU014":"298b68","AR086":"dcf3f7","AN009":"7ed60b","CO184":"de70d1","PU029":"6ab38d","CO113":"658c53","AN043":"6acf45","AR020":"cc1d16","CO053":"b27cd3","AN035":"f40eeb","CO021":"337322","CO026":"b4906c","CO029":"ee5d25","AN032":"7e14ee","CO066":"bfce82","CO189":"fadd72","PU111":"1c5fcd","AN015":"5d1315","PU055":"95f14e","CO131":"2df47d","AR044":"dc2ddb","PU072":"12f458","CO191":"137d48","PU110":"85eed1","PU001":"7f9c2d","CO129":"aa9712","CO102":"92bb88","AR015":"f888a8","PU016":"7fd660","CO047":"62262b","CO135":"36e54c","PU084":"20ac46","CO002":"d5ad94","CO050":"feb2dc","CO008":"9f55f2","CO192":"f281af","AN066":"113d4a","CO031":"d30f5d","AR112":"2a2b92","CO071":"826ad4","CO097":"f9746a","PU108":"fb9acc","CO137":"57905b","AR035":"cd7634","PU036":"98a1b7","CO149":"4d3720","CO099":"d6ef8b","PU127":"9bf69f","AR025":"42d00d","PU187":"1ad3fc","PU023":"8ca9a9","PU003":"977491","CO039":"fb8ccf","PU017":"91b283","CO044":"90412f","AR019":"b85368","CO018":"3e02e9","PU034":"c2d194","PU074":"fb2262","AR082":"d37db7","CO080":"277ea1","AN067":"a2ed6e","AN045":"bbf34b","PU011":"d4d0fa","AN039":"c1dada","CO057":"e10c81","PU107":"095aaa","CO016":"05dfa2","AN002":"a966e4","PU124":"f19477","CO032":"614ab4","CO143":"c2a766","AN054":"cc9fc2","CO130":"12d576","AN056":"9c4b4e","CO041":"448251","AR058":"80fcd7","PU021":"12b1ac","CO100":"c30d0b","PU082":"7b36a8","PU065":"8bd3d7","AR113":"fa0e9c","PU030":"f9345b","CO028":"e54b94","CO082":"623307","AN031":"a8551d","PU091":"b022ef","PU079":"1abc99","AR046":"1f8d08","PU125":"8799fd","CO123":"d0c373","AN020":"44bd0e","PU064":"559de7","AR002":"db7a86","CO077":"64d2fb","CO122":"973953","PU008":"fc656e","CO186":"3aec0a","AN007":"aff00d","PU077":"b7ed00","CO185":"e69ce8","PU012":"436fb6","PU109":"822c75","PU013":"b3db65","CO067":"1c2585","PU045":"861ff4","AR083":"0093a4","AR033":"36fd23","CO136":"20c4d9","AR074":"e2d591","CO036":"ae5833","AN014":"3ce6e8","AR017":"be5677","CO046":"a390fe","CO025":"0c1420","AR055":"5430dd","CO085":"de97ba","CO999":"6e0faf","AR077":"1907d6","CO014":"77b13d","PU123":"195798","CO117":"025f94","CO084":"34cbbc","AN057":"eaa33a","PU053":"4a6c1f","CO038":"ea115c","AR023":"d8c161","AN011":"16e90b","PU028":"35a78b","CO023":"baa4f1","CO024":"2d78cf","PU018":"52e937","AR062":"ff2541","CO161":"257ff2","CO144":"af3d68","CO030":"cc991b","AR007":"3f3d71","CO152":"0b18a6","CO119":"53f9af","AR043":"52c1f4","AN063":"c1a599","AR067":"097f29","AR049":"502505","PU063":"ebbe3e","AR021":"baf183","AR036":"fc2c53","CO019":"c34fd5","CO105":"9edb16","AR054":"cf1f20","CO092":"ac4b26","AR096":"82cdfc","AR047":"22939e","AN008":"d0c823","PU093":"01b067","PU104":"464d88","AR068":"eeb404","CO022":"e5001c","PU035":"618d1b","CO011":"0f0e9b","AR041":"624bb8","CO104":"fe2df2","AN005":"8bee1c","PU066":"fff615","CO157":"7ffdac","CO193":"aa8c5a","AN049":"c9d41e","AR024":"0bd5be","CO139":"88dbdf","CO093":"4723fb","PU051":"1097d3","PU002":"c27006","AN019":"d44237","AR095":"afa875","PU050":"596b6e","AR115":"89990b","CO156":"eb2832","PU052":"aa6c51","CO009":"a3b68b","CO017":"3aefe6","PU073":"91d86c","CO155":"4ad7c4","CO015":"c49b86","PU007":"6fb989","AR040":"f1f14d","PU049":"737fb7","AR005":"d3cb3f","CO110":"65723c","PU024":"7bf423","PU076":"a05dbf","AN024":"a71ccb","AR059":"7c073e","CO199":"fb632b","PU106":"a5680e","PU043":"780c17","AR071":"d34bd1","CO134":"d17475","AR029":"a1c74d","AR056":"ced2ff","CO003":"21ffaa","AN065":"0764d9","CO094":"bb9bfd","CO083":"cf3c94","AR048":"6ce663","CO061":"8edf31","AR084":"4b3da6","PU056":"aacfe3","AR081":"c12b85","AN046":"1a685a","CO147":"e15728","CO035":"a0e880","AN050":"4473d2","PU069":"25708a","PU090":"8d5039","PU031":"825489","CO109":"7bf4b0","AN030":"a80064","PU060":"1604d7","CO150":"0a0897","PU122":"3a71e5","CO063":"7c48c8","CO051":"cb800c","PU068":"638b06","AR109":"5deb61","AR030":"28eb91","CO154":"f1c098","PU042":"08fffa","PU087":"5bbf84","AR094":"d34c77","INS130":"e87a72","AR001":"95c17d","CO127":"292fbb","AN003":"d4e548","CO101":"50e850","AN038":"a92a6f","PU044":"b8ce9e","CO058":"a8fef3","CO173":"61f021","CO072":"64485b","PU094":"645c74","AR060":"624707","CO140":"24a3de","AR031":"0cef9c","AN016":"72e83d","CO004":"9c9697","CO126":"ee18a3","PU083":"65dd8b","AR051":"d60c1f","CO138":"110cce","PU048":"a83960","PU025":"9c2ed5","AR092":"1a2fd7","PU038":"640c29","AR111":"08b848","CO090":"c1addb","CO182":"56df4a","PU112":"360766","AN037":"4c12c5","CO148":"a312f2","CO049":"8900e5","AR016":"29624c","AR039":"8c4921","PU070":"d302e3","CO081":"6b433a","AN055":"401b4c","CO001":"ceb919","AR034":"d0bff9","PU086":"5fca78","AN059":"5537c1","PU027":"d1b668","PU040":"c39cad","PU103":"7c2c37","CO133":"f6c367","CO060":"6e0592","PU095":"426b50","CO115":"7b2f66","AR006":"bbc742","AR053":"c8499d","AN021":"ccf01f","AN053":"6a35e5","AN068":"6ba69d","CO170":"00103a","AN028":"b4b968","PU096":"e53464","AR010":"b90059","AR026":"dd3d13","CO116":"871ead","CO065":"b2f021","CO112":"1f2524","AR110":"9afec9","CO042":"7fe84f","PU062":"150b44","PU010":"9763e4","CO006":"420b13","CO013":"72a40f","PU101":"392cf5","AR032":"f4d92d","AN025":"712b88","AN013":"630062","AR064":"c4c6d8","PU039":"869c9d","AN062":"524eda"};
+const SELLERS=[{n:"Michell",p:"56930868065"},{n:"Gaby",p:"56995163070"}];
+const CATS={CO:["Collares","Collar"],PU:["Pulseras","Pulsera"],AR:["Aros","Aros"],AN:["Anillos","Anillo"]};
+const P=DATA.map(r=>({sku:r[0],name:r[1]||CATS[r[2]][1],cat:r[2],x6:r[3],x3:r[4],det:r[5],ok:!!r[6]}));
+const BY=Object.fromEntries(P.map(p=>[p.sku,p]));
+const $=s=>document.querySelector(s);
+const clp=n=>"$"+Math.round(n).toLocaleString("es-CL");
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let cart=store.get("frade_cart",{}); for(const k in cart) if(!BY[k]) delete cart[k];
+let cat="ALL",q="",sort="new";
+
+function tier(n){return n>=6?"x6":n>=3?"x3":"det"}
+function unit(p,t){ // nunca cobrar más por llevar más
+  const order={det:["det"],x3:["x3","det"],x6:["x6","x3","det"]}[t];
+  const v=order.map(k=>p[k]).filter(Boolean);
+  return p[t]?Math.min(...v):0;
+}
+function totals(){
+  const items=Object.entries(cart).filter(([,q])=>q>0);
+  const pieces=items.reduce((a,[,q])=>a+q,0), t=tier(pieces);
+  let sum=0,pend=0;
+  const lines=items.map(([s,q])=>{const p=BY[s],u=unit(p,t); if(u) sum+=u*q; else pend+=q; return {p,q,u}});
+  return {pieces,t,sum,pend,lines};
+}
+const TLABEL={det:"precio detalle",x3:"precio x3",x6:"precio x6"};
+
+function renderSeg(){
+  const counts={ALL:P.length}; P.forEach(p=>counts[p.cat]=(counts[p.cat]||0)+1);
+  $("#seg").innerHTML=[["ALL","Todo"],...Object.entries(CATS).map(([k,v])=>[k,v[0]])]
+    .map(([k,l])=>`<button aria-pressed="${k===cat}" data-cat="${k}">${l}<small>${counts[k]||0}</small></button>`).join("");
+}
+function cardActions(p){
+  const n=cart[p.sku]||0;
+  return n?`<div class="step"><button data-dec="${p.sku}" aria-label="Quitar uno">−</button><output>${n}</output><button data-inc="${p.sku}" aria-label="Agregar uno">+</button></div>`
+          :`<button class="add" data-inc="${p.sku}">Agregar</button>`;
+}
+function renderGrid(){
+  const qq=q.trim().toLowerCase();
+  let list=P.filter(p=>(cat==="ALL"||p.cat===cat)&&(!qq||p.name.toLowerCase().includes(qq)||p.sku.toLowerCase().includes(qq)));
+  const num=s=>parseInt(s.slice(2));
+  list.sort(sort==="asc"?(a,b)=>a.x6-b.x6:sort==="desc"?(a,b)=>b.x6-a.x6:(a,b)=>num(b.sku)-num(a.sku)||a.cat.localeCompare(b.cat));
+  $("#count").textContent=`${list.length} piezas`;
+  $("#grid").innerHTML=list.length?list.map(p=>`
+    <article class="card">
+      <button class="ph" data-open="${p.sku}" aria-label="Ver ${p.name}"><img loading="lazy" src="img/${p.sku}.webp?v=${IV[p.sku]||""}" alt="${p.name}">${p.ok?"":`<span class="badge">Consultar disponibilidad</span>`}</button>
+      <div class="info">
+        <div class="sku">${p.sku}</div>
+        <div class="name">${p.name}</div>
+        <div class="price"><b>${clp(p.x6)}</b><span>X6</span></div>
+        <div class="sub">${p.x3?`x3 ${clp(p.x3)} · detalle ${clp(p.det)}`:"x3 y detalle: consultar"}</div>
+        <div data-act="${p.sku}">${cardActions(p)}</div>
+      </div>
+    </article>`).join(""):`<div class="empty">No encontramos piezas con “${q}”. Prueba con otro nombre o SKU.</div>`;
+}
+function refreshCard(s){const el=document.querySelector(`[data-act="${s}"]`); if(el) el.innerHTML=cardActions(BY[s]);}
+function renderTray(){
+  const T=totals();
+  $("#tray").dataset.empty=T.pieces?"0":"1";
+  $("#tTot").textContent=clp(T.sum)+(T.pend?" +":"");
+  const next=T.pieces<3?3:T.pieces<6?6:0;
+  $("#tMsg").textContent=`${T.pieces} pieza${T.pieces===1?"":"s"} · ${TLABEL[T.t]}`+(next?` · ${next-T.pieces} más para ${next===3?"x3":"x6"}`:" aplicado");
+  $("#tBar").style.width=Math.min(100,T.pieces/6*100)+"%";
+}
+function seller(){
+  let s=store.get("frade_seller",null);
+  if(!s||!SELLERS.find(x=>x.p===s)){s=SELLERS[Math.floor(Math.random()*SELLERS.length)].p;store.set("frade_seller",s)}
+  return SELLERS.find(x=>x.p===s);
+}
+function renderCart(){
+  const T=totals(), S=seller();
+  if(!T.pieces){$("#cartBody").innerHTML=`<div class="empty">Tu pedido está vacío.<br>Agrega piezas desde el catálogo.</div>`;$("#waBtn").hidden=true;$("#swap").innerHTML="";return}
+  $("#waBtn").hidden=false;
+  const next=T.pieces<3?3:T.pieces<6?6:0;
+  let save="";
+  if(next){const nt=tier(next); const now=T.sum, then=T.lines.reduce((a,l)=>a+(unit(l.p,nt)||0)*l.q,0); const d=now-then; if(d>0) save=` y ahorras <b>${clp(d)}</b> en lo que ya elegiste`;}
+  $("#cartBody").innerHTML=T.lines.map(l=>`
+    <div class="line"><img src="img/${l.p.sku}.webp?v=${IV[l.p.sku]||""}" alt="">
+      <div class="t"><div>${l.p.name}</div><small>${l.p.sku} · ${l.u?clp(l.u)+" c/u":"precio a confirmar"}</small></div>
+      <div class="step"><button data-dec="${l.p.sku}" aria-label="Quitar uno">−</button><output>${l.q}</output><button data-inc="${l.p.sku}" aria-label="Agregar uno">+</button></div>
+    </div>`).join("")
+    +(next?`<div class="nudge">Agrega <b>${next-T.pieces} pieza${next-T.pieces===1?"":"s"}</b> más (cualquier modelo) para pasar a ${next===3?"precio x3":"precio x6"}${save}.</div>`:`<div class="nudge">Tienes <b>precio x6</b> en todo tu pedido.</div>`)
+    +`<div class="sum"><div><span>Piezas</span><span>${T.pieces}</span></div><div><span>Precio aplicado</span><span>${TLABEL[T.t]}</span></div>${T.pend?`<div><span>Por confirmar</span><span>${T.pend} pieza${T.pend===1?"":"s"}</span></div>`:""}<div class="tot"><span>Total estimado</span><span>${clp(T.sum)}</span></div></div>
+    <p style="text-align:center"><button class="clear" id="clear">Vaciar pedido</button></p>`;
+  $("#waTxt").textContent=`Enviar pedido a ${S.n}`;
+  const O=SELLERS.find(x=>x.p!==S.p);
+  $("#swap").innerHTML=O?`¿Ya compras con alguien? <button id="swapBtn" data-to="${O.p}">Enviar a ${O.n}</button>`:"";
+  const msg=[`Hola ${S.n}, quiero cotizar este pedido del catálogo FRADE:`,"",
+    ...T.lines.map(l=>`• ${l.p.sku} ${l.p.name} × ${l.q} — ${l.u?clp(l.u)+" c/u":"precio a confirmar"}`),"",
+    `Total piezas: ${T.pieces} (${TLABEL[T.t]})`,`Total estimado: ${clp(T.sum)}${T.pend?" + piezas por confirmar":""}`].join("\n");
+  $("#waBtn").href=`https://wa.me/${S.p}?text=${encodeURIComponent(msg)}`;
+}
+function renderDetail(s){
+  const p=BY[s], n=cart[s]||0;
+  $("#dSku").textContent=p.sku;
+  const cell=(k,l)=>`<div class="${k==="x6"?"hi":""}"><small>${l}</small><b>${p[k]?clp(p[k]):"Consultar"}</b></div>`;
+  $("#dBody").innerHTML=`<div class="pd"><div class="ph"><img src="img/${p.sku}.webp?v=${IV[p.sku]||""}" alt="${p.name}"></div>
+    <div><div class="name" style="font-size:18px;min-height:0">${p.name}</div><div class="sub">${CATS[p.cat][0]}${p.ok?"":" · consultar disponibilidad"}</div></div>
+    <div class="ptab">${cell("det","Detalle 1–2")}${cell("x3","x3 · 3–5")}${cell("x6","x6 · 6+")}</div>
+    <div data-act="${p.sku}">${cardActions(p)}</div><div style="height:8px"></div></div>`;
+}
+function openSheet(id){$("#scrim").classList.add("on");$(id).classList.add("on")}
+function closeAll(){$("#scrim").classList.remove("on");document.querySelectorAll(".sheet").forEach(s=>s.classList.remove("on"))}
+function change(s,d){cart[s]=Math.max(0,(cart[s]||0)+d); if(!cart[s]) delete cart[s]; store.set("frade_cart",cart);
+  document.querySelectorAll(`[data-act="${s}"]`).forEach(el=>el.innerHTML=cardActions(BY[s])); renderTray(); if($("#cart").classList.contains("on")) renderCart();}
+
+document.addEventListener("click",e=>{
+  const t=e.target.closest("button");
+  if(!t) {if(e.target.id==="scrim") closeAll(); return}
+  if(t.dataset.cat){cat=t.dataset.cat;renderSeg();renderGrid();window.scrollTo({top:0})}
+  else if(t.dataset.inc) change(t.dataset.inc,1);
+  else if(t.dataset.dec) change(t.dataset.dec,-1);
+  else if(t.dataset.open){renderDetail(t.dataset.open);openSheet("#detail")}
+  else if(t.id==="openCart"){renderCart();openSheet("#cart")}
+  else if(t.hasAttribute("data-close")) closeAll();
+  else if(t.id==="swapBtn"){store.set("frade_seller",t.dataset.to);renderCart()}
+  else if(t.id==="clear"){cart={};store.set("frade_cart",cart);renderGrid();renderTray();renderCart()}
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape") closeAll()});
+$("#q").addEventListener("input",e=>{q=e.target.value;renderGrid()});
+$("#sort").addEventListener("change",e=>{sort=e.target.value;renderGrid()});
+renderSeg();renderGrid();renderTray();
+</script>
+
+</body>
+</html>
