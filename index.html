@@ -13,26 +13,23 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="theme-color" content="#FADCDE">
 <title>Catálogo FRADE</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Italiana&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: vitrina de grilla tipo app iOS — barra de cristal arriba, grilla de piezas, bandeja de pedido flotante abajo */
 :root{
-  --bg:#f7f6f3; --surface:#ffffff; --fg:#17150f; --muted:#7b7566; --line:#e7e3da;
-  --gold:#a8812f; --gold-soft:#f1e7d0; --ok:#2f7d4f; --warn:#9a6a12; --wa:#1f9d55;
-  --glass:rgba(247,246,243,.78);
-  --display:"Italiana","Didot","Bodoni 72",Georgia,serif;
-  --ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","Outfit",system-ui,sans-serif;
-  --r:18px;
+  --bg:#FADCDE; --surface:#FFFBF0; --fg:#2B2B2B; --topaz:#913939; --pink:#EAB7BA;
+  --muted:rgba(43,43,43,.62); --line:rgba(145,57,57,.14);
+  --gold:#D99B2E; --gold-grad:linear-gradient(90deg,#F6DF77,#F4D361 30%,#E7B646 60%,#D99B2E 80%,#D08F28);
+  --gold-soft:rgba(234,183,186,.38); --ok:#913939; --warn:#913939; --wa:#913939;
+  --glass:rgba(255,251,240,.62);
+  --display:"Inter",-apple-system,system-ui,sans-serif;
+  --ui:"Inter",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --r:22px; color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0f0e0c; --surface:#1a1915; --fg:#f3efe6; --muted:#9a9384; --line:#2b2923;
-  --gold:#d6b066; --gold-soft:#2c2617; --ok:#5cc184; --warn:#e0b14f; --wa:#2fbf6a; --glass:rgba(15,14,12,.74); color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0f0e0c; --surface:#1a1915; --fg:#f3efe6; --muted:#9a9384; --line:#2b2923;
-  --gold:#d6b066; --gold-soft:#2c2617; --ok:#5cc184; --warn:#e0b14f; --wa:#2fbf6a; --glass:rgba(15,14,12,.74); color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:15px;line-height:1.4;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--glass)}
@@ -130,6 +127,40 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var
 .ptab small{display:block;font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
 .ptab b{font-size:16px;font-variant-numeric:tabular-nums}
 .ptab .hi{border-color:var(--gold);background:var(--gold-soft)}
+
+/* Marca FRADE (manual de uso): patrón, vidrio, logo */
+body{background:var(--bg)}
+.logo{height:34px;width:auto;color:var(--topaz);display:block}
+.brand span{color:var(--topaz);letter-spacing:.32em;font-weight:600;font-size:9.5px;margin-top:7px}
+header{border-bottom:1px solid rgba(255,255,255,.6)}
+.search{background:rgba(255,251,240,.75);border-color:var(--line);border-radius:14px}
+.seg button{background:rgba(255,251,240,.7);border-color:var(--line);color:var(--topaz)}
+.seg button[aria-pressed="true"]{background:var(--topaz);color:var(--surface);border-color:var(--topaz)}
+.hero{margin-top:16px;padding:16px 18px;border-radius:24px;background:var(--glass);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.7);box-shadow:0 18px 40px -26px rgba(145,57,57,.45);position:relative}
+.hero::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:var(--gold-grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.hero h1{margin:0 0 4px;font-size:19px;font-weight:600;color:var(--topaz);letter-spacing:-.01em}
+.hero .tiers{padding:6px 0 0;color:var(--fg)}
+.hero .tiers strong{color:var(--topaz)}
+.tiers .dot{background:var(--gold-grad)}
+.toolbar{color:var(--topaz);font-weight:500}
+.toolbar select{background:rgba(255,251,240,.8);border-color:var(--line);color:var(--topaz)}
+.card{background:var(--surface);border-color:rgba(255,255,255,.8);box-shadow:0 10px 28px -22px rgba(145,57,57,.55)}
+.price b{color:var(--topaz)}
+.price span{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+.add{background:var(--topaz);color:var(--surface);border-radius:999px;width:100%}
+.step{border-radius:999px;color:var(--topaz)}
+.badge{background:var(--surface);color:var(--topaz);border:1px solid var(--line)}
+.traybar{background:rgba(145,57,57,.92);color:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:26px;box-shadow:0 20px 44px -18px rgba(145,57,57,.7)}
+.bar{background:rgba(255,251,240,.22)}
+.bar i{background:var(--gold-grad)}
+.traybar .go{background:var(--gold-grad);color:#2B2B2B;border-radius:999px;padding:11px 16px}
+.sheet{background:var(--surface)}
+.sh-head h2{color:var(--topaz);font-weight:600;font-size:22px;letter-spacing:-.01em}
+.x{background:var(--gold-soft);color:var(--topaz)}
+.wa{background:var(--topaz);border-radius:999px}
+.nudge{background:var(--gold-soft);color:var(--fg)}
+.ptab .hi{border-color:var(--topaz);background:var(--gold-soft)}
+.scrim{background:rgba(43,43,43,.4)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -138,7 +169,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var
 <header>
   <div class="wrap">
     <div class="top">
-      <div class="brand"><b>FRADE</b><span>Catálogo mayorista</span></div>
+      <div class="brand"><svg class="logo" role="img" aria-label="FRADE" xmlns="http://www.w3.org/2000/svg" viewBox="440 412 1036 256"><g fill="currentColor" fill-rule="nonzero"><path d="M843.86 449.39C842.11 445.46 838.21 442.93 833.90 442.93L730.28 442.93L730.28 445.03C730.28 445.03 744.98 446.83 744.98 460.93L744.98 615.13C744.98 629.23 730.28 631.03 730.28 631.03L730.28 632.83L780.68 632.83L780.68 631.03C780.68 631.03 765.98 629.23 765.98 615.13L765.98 539.53L797.78 539.53C810.98 539.53 818.48 542.53 824.48 558.43L826.28 558.43L826.28 517.33L824.48 517.33C818.48 533.53 810.98 536.23 797.78 536.23L765.98 536.23L765.98 446.23L809.48 446.23C822.98 446.23 831.38 454.03 841.88 470.53L853.28 470.53L843.86 449.39"/><path d="M917.18 556.63C916.88 556.63 916.58 556.93 916.28 556.93C907.88 559.63 898.58 561.43 888.98 562.33L888.98 446.23L916.58 446.23C947.78 446.23 970.58 467.83 970.58 497.83C970.58 526.63 948.08 547.03 917.18 556.63M991.88 618.43L977.18 574.03C972.38 558.73 955.88 552.43 937.28 553.03C965.48 541.03 991.88 521.23 991.88 497.83C991.88 460.33 958.58 442.93 927.98 442.93L853.28 442.93L853.28 445.03C853.28 445.03 867.98 446.83 867.98 460.93L867.98 615.13C867.98 629.23 853.28 631.03 853.28 631.03L853.28 632.83L903.68 632.83L903.68 631.03C903.68 631.03 888.98 629.23 888.98 615.13L888.98 565.63C897.08 565.33 906.38 563.53 916.58 560.53C942.38 553.93 953.78 565.63 961.28 588.73L970.88 618.43C974.48 629.83 961.58 631.03 961.58 631.03L961.58 632.83L1009.58 632.83L1009.58 631.03C1009.58 631.03 995.78 629.83 991.88 618.43"/><path d="M1059.52 571.01L1059.51 571.00L1090.29 476.45L1123.59 579.65L1124.79 582.95L1135.59 615.95C1137.52 621.99 1136.03 625.76 1133.70 628.11C1131.83 629.46 1129.22 630.40 1126.63 630.40L1117.03 630.40C1085.78 630.40 1059.52 602.63 1059.52 571.01M1157.79 615.95L1101.69 443.75L1079.49 443.75L1088.49 471.35L1041.09 617.15C1037.79 627.05 1028.49 631.85 1019.79 631.85L1019.79 633.65L1056.39 633.65L1056.39 631.85C1047.99 631.85 1041.39 627.05 1044.69 617.15L1055.79 582.95L1056.69 579.65L1056.77 579.43C1060.00 609.92 1085.88 633.78 1117.03 633.78L1150.75 633.66C1150.75 633.66 1150.75 633.65 1150.75 633.65L1177.59 633.65L1177.59 631.85C1177.59 631.85 1162.29 630.05 1157.79 615.95"/><path d="M1248.80 630.35L1225.70 630.35L1225.70 447.05L1248.80 447.05C1300.70 447.05 1317.49 503.15 1317.49 538.85C1317.49 574.25 1300.70 630.35 1248.80 630.35M1254.20 443.75L1189.99 443.75L1189.99 445.85C1189.99 445.85 1204.70 447.65 1204.70 461.75L1204.70 615.95C1204.70 630.05 1189.99 631.85 1189.99 631.85L1189.99 633.65L1254.20 633.65C1307.30 633.65 1340.59 591.05 1340.59 538.85C1340.59 486.65 1307.30 443.75 1254.20 443.75"/><path d="M1455.70 606.35C1445.20 622.85 1436.80 630.35 1423.30 630.35L1374.11 630.35L1374.11 520.85L1398.10 520.85C1411.30 520.85 1418.80 523.85 1424.80 539.75L1426.90 539.75L1426.90 498.65L1424.80 498.65C1418.80 514.85 1411.30 517.55 1398.10 517.55L1374.11 517.55L1374.11 447.05L1408.00 447.05C1421.20 447.05 1429.60 454.85 1440.10 471.35L1451.50 471.35L1439.50 443.75L1338.41 443.75L1338.41 445.85C1338.41 445.85 1353.11 447.65 1353.11 461.75L1353.11 615.95C1353.11 630.05 1338.41 631.85 1338.41 631.85L1338.41 633.65L1454.80 633.65L1467.10 606.35L1455.70 606.35"/><path d="M536.00 608.96C536.09 635.31 527.79 650.25 511.34 653.38C511.34 653.38 511.34 653.38 511.33 653.38C509.87 653.67 508.25 653.82 506.51 653.82C496.40 653.82 480.48 648.30 468.90 632.74C456.84 616.58 454.30 593.29 462.56 574.79C471.24 555.32 491.81 541.70 516.26 539.24L516.98 539.17C521.28 538.78 526.10 538.59 531.72 538.59C533.15 538.59 534.58 538.60 536.01 538.62L536.00 555.02C535.97 572.70 535.94 590.98 536.00 608.96M540.87 608.94C540.81 592.46 540.84 575.66 540.86 559.42L540.90 538.71L545.93 538.85C550.42 538.98 555.22 539.10 559.86 539.10L563.36 539.10L563.39 560.03C563.42 576.07 563.44 592.65 563.38 608.89C563.37 609.20 562.77 635.94 540.58 648.90C535.20 652.04 528.94 654.01 521.97 654.76C534.59 647.88 540.95 632.47 540.87 608.94M559.86 534.24C555.15 534.24 550.29 534.10 546.00 533.98L544.04 533.93C542.98 533.90 541.94 533.87 540.90 533.85C540.92 529.67 540.92 525.50 540.92 521.32L540.92 452.35C540.92 444.17 544.85 436.61 551.46 432.12L552.13 431.68L552.33 431.81C552.44 431.86 552.54 431.93 552.67 432.03L552.82 432.12C559.41 436.61 563.35 444.18 563.35 452.35L563.36 534.24L559.86 534.24M625.41 547.16C625.76 547.09 626.00 546.79 626.00 546.44L626.00 527.84C626.00 527.49 625.75 527.19 625.41 527.12C625.07 527.06 624.72 527.25 624.60 527.58C623.88 529.44 623.12 530.92 622.25 532.09C621.26 533.44 619.63 534.24 617.89 534.24L568.22 534.24L568.21 452.35C568.21 443.18 563.96 434.49 556.83 429.03C564.14 425.52 571.19 424.83 575.89 424.87L624.80 424.87C635.42 424.87 644.06 433.51 644.06 444.13L644.06 449.17C644.06 449.61 643.94 450.03 643.73 450.37C642.42 452.28 640.26 453.79 636.93 455.09C636.60 455.22 636.41 455.56 636.48 455.91C636.54 456.25 636.84 456.50 637.19 456.50L655.80 456.50C656.15 456.50 656.45 456.25 656.51 455.91C656.58 455.56 656.39 455.22 656.06 455.09C652.84 453.85 650.73 452.44 649.44 450.69C649.10 450.20 648.93 449.70 648.93 449.18L648.93 444.13C648.93 430.83 638.10 420.00 624.80 420.00L514.97 420.00C512.65 420.00 510.65 421.74 510.32 424.04C510.29 424.25 510.35 424.46 510.49 424.62C510.63 424.78 510.83 424.87 511.04 424.87L528.37 424.87C532.99 424.82 540.12 425.52 547.42 429.03C540.29 434.49 536.04 443.18 536.04 452.35L536.03 533.74L535.80 533.74C528.07 533.67 522.06 533.81 516.54 534.32L515.78 534.39C489.61 537.02 467.51 551.74 458.10 572.80C449.16 592.86 451.92 618.11 464.98 635.65C470.19 642.64 477.70 649.03 485.58 653.18C490.59 655.82 495.62 657.54 500.46 658.27C501.13 658.45 507.22 660.00 515.58 660.00C525.96 660.00 535.20 657.68 543.03 653.11C567.61 638.77 568.25 609.25 568.25 608.94C568.31 590.39 568.28 571.46 568.25 554.75L568.24 539.10L617.52 539.10C618.13 539.10 618.67 539.22 619.13 539.46C621.44 540.71 623.13 542.94 624.60 546.71C624.73 547.03 625.06 547.22 625.41 547.16"/></g></svg><span>CATÁLOGO MAYORISTA</span></div>
       <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar pieza o SKU" autocomplete="off"></label>
     </div>
     <nav class="seg" id="seg" aria-label="Categorías"></nav>
@@ -146,12 +177,12 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var
 </header>
 
 <main class="wrap">
-  <div class="tiers" aria-label="Precios por cantidad">
+  <section class="hero"><h1>Arma tu pedido y envíalo por WhatsApp</h1><div class="tiers" aria-label="Precios por cantidad">
     <span class="t"><i class="dot"></i>Precios por total de piezas surtidas</span>
     <span class="t"><strong>1–2</strong> detalle</span>
     <span class="t"><strong>3–5</strong> precio x3</span>
     <span class="t"><strong>6+</strong> precio x6</span>
-  </div>
+  </div></section>
   <div class="toolbar">
     <span id="count"></span>
     <select id="sort" aria-label="Ordenar"><option value="new">Lo más nuevo</option><option value="asc">Menor precio</option><option value="desc">Mayor precio</option></select>
