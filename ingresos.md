@@ -1,0 +1,25 @@
+# Registro de ingresos al catálogo
+
+- 2026-11-02 · PU123 · Pulsera Tejido Rojo + Gucci · x6 5500 / x3 8500 / det 12500
+- 2026-11-02 · PU132 · Pulsera Eslabon Grande Tipo Gucci · x6 7500 / x3 10500 / det 13500
+- 2026-11-02 · PU133 · Pulsera de Balines con Estrella · x6 5500 / x3 8500 / det 10500
+- 2026-11-02 · PU085 · Pulsera Hilo Negro Tipo Rolex · x6 7000 / x3 9500 / det 12500
+- 2026-11-02 · PU135 · Pulsera 3 Corazones · x6 7500 / x3 10500 / det 13500
+- 2026-11-02 · PU134 · Pulsera de Balines con Corazon · x6 5500 / x3 8500 / det 10500
+- 2026-11-02 · PU087 · Pulsera Tipo Gucci · x6 5500 / x3 8000 / det 12000
+- 2026-11-02 · PU131 · Pulsera Tejida Doble Fila de Balines · x6 7500 / x3 9500 / det 12000
+- 2026-11-02 · AR054 · Aros Argolla Gucci Plano · x6 5500 / x3 7500 / det 10000
+- 2026-11-02 · AR024 · Argollas Tipo Cartier · x6 4000 / x3 5000 / det 7000
+- 2026-11-02 · AR001 · Argollas Tipo Cartier Clavo · x6 5500 / x3 7500 / det 10500
+- 2026-11-02 · CO206 · Cadena con Dije Cruz Lisa · x6 5500 / x3 10000 / det 12000
+- 2026-11-02 · CO039 · Collar Corazón Rojo Punto de Luz · x6 5500 / x3 7500 / det 15000
+- 2026-11-02 · CO207 · Cadena con Dije Love Circones · x6 5500 / x3 12000 / det 15000
+- 2026-11-02 · CO191 · Collar Venezuela con Circones · x6 6500 / x3 12000 / det 16000
+- 2026-11-02 · CO047 · Collar Ojo Turco con Circones · x6 5500 / x3 10500 / det 15000
+- 2026-11-02 · CO208 · Cadena Dije Veneka 58 · x6 8500 / x3 13000 / det 18000
+- 2026-11-02 · CO026 · Collar Cruz Rústica · x6 5500 / x3 7500 / det 12000
+- 2026-11-02 · CO212 · Cadena con Dije de Corazon · x6 6500 / x3 12500 / det 16000
+- 2026-11-02 · CO209 · Cadena Dije Cruz + San Miguel Arcangel · x6 6500 / x3 12500 / det 16000
+- 2026-11-02 · CO210 · Cadena Dije Cruz Jesus · x6 7000 / x3 13000 / det 17000
+- 2026-11-02 · CO211 · Cadena Dije Osito · x6 7000 / x3 13000 / det 17000
+- 2026-11-02 · CO013 · Collar Osito Dorado · x6 8500 / x3 13000 / det 20000
