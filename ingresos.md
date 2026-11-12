@@ -26,3 +26,4 @@
 - 2026-11-12 · CO024 · Collar Cadena Tejido Chino 45cm · x6 5000 / x3 7500 / det 12000
 - 2026-11-12 · CO195 · Cadena Tejido Chino C/extensor + Ojo Turco Baby + Rosca Turca · x6 8500 / x3 12500 / det 18000
 - 2026-11-12 · CO195-2 · Cadena Tejido Chino C/extensor + Ojo Turco Baby + Rosca Turca Azul · x6 8500 / x3 12500 / det 18000
+- 2026-11-12 · CO195-3 · Cadena Tejido Chino C/extensor + Ojo Turco Baby + Rosca Turca Verde · x6 8500 / x3 12500 / det 18000
