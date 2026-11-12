@@ -35,3 +35,4 @@
 - 2026-11-12 · CO214 · Cadena Tejido Chino 45cm + Cruz · x6 7499 / x3 12000 / det 16000
 - 2026-11-12 · CO215 · Cadena Tipo Gucci + Cuerno Dorado + Ojo Turco Baby · x6 12500 / x3 18000 / det 24000
 - 2026-11-12 · CO216 · Cadena Tipo Gucci 45cm + Cruz · x6 10000 / x3 15000 / det 20000
+- 2026-11-12 · CO215 · Cadena Tipo Gucci 45cm + Cuerno Dorado + Ojo Turco Baby · x6 12500 / x3 18000 / det 24000
