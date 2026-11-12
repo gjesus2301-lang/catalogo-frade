@@ -23,3 +23,4 @@
 - 2026-11-02 · CO210 · Cadena Dije Cruz Jesus · x6 7000 / x3 13000 / det 17000
 - 2026-11-02 · CO211 · Cadena Dije Osito · x6 7000 / x3 13000 / det 17000
 - 2026-11-02 · CO013 · Collar Osito Dorado · x6 8500 / x3 13000 / det 20000
+- 2026-11-12 · CO024 · Collar Cadena Tejido Chino 45cm · x6 5000 / x3 7500 / det 12000
