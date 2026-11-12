@@ -32,3 +32,6 @@
 - 2026-11-12 · CO195-2 · Cadena Tejido Chino 45cm + Rosca Turca + Dije Azul · x6 8500 / x3 12500 / det 18000
 - 2026-11-12 · CO195-3 · Cadena Tejido Chino 45cm + Rosca Turca + Dije Verde · x6 8500 / x3 12500 / det 18000
 - 2026-11-12 · CO213 · Cadena Tipo Gucci 45cm + Dijes · x6 12500 / x3 18000 / det 24000
+- 2026-11-12 · CO214 · Cadena Tejido Chino 45cm + Cruz · x6 7499 / x3 12000 / det 16000
+- 2026-11-12 · CO215 · Cadena Tipo Gucci + Cuerno Dorado + Ojo Turco Baby · x6 12500 / x3 18000 / det 24000
+- 2026-11-12 · CO216 · Cadena Tipo Gucci 45cm + Cruz · x6 10000 / x3 15000 / det 20000
