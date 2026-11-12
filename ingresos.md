@@ -27,3 +27,4 @@
 - 2026-11-12 · CO195 · Cadena Tejido Chino C/extensor + Ojo Turco Baby + Rosca Turca · x6 8500 / x3 12500 / det 18000
 - 2026-11-12 · CO195-2 · Cadena Tejido Chino C/extensor + Ojo Turco Baby + Rosca Turca Azul · x6 8500 / x3 12500 / det 18000
 - 2026-11-12 · CO195-3 · Cadena Tejido Chino C/extensor + Ojo Turco Baby + Rosca Turca Verde · x6 8500 / x3 12500 / det 18000
+- 2026-11-12 · CO195-3 · Cadena Tejido Chino C/extensor + Ojo Turco Baby + Rosca Turca Verde · x6 8500 / x3 12500 / det 18000
