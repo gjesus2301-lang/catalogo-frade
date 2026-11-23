@@ -39,3 +39,4 @@
 - 2026-11-12 · CO195-4 · Cadena Tejido Chino 45cm + Rosca Turca + Dije Azul Marino · x6 8500 / x3 12500 / det 18000
 - 2026-11-12 · CO195-3 · Cadena Tejido Chino 45cm + Rosca Turca + Dije Verde · x6 8500 / x3 12500 / det 18000
 - 2026-11-23 · AR117 · Argollas Peq. Tipo Cubana · x6 4000 / x3 8000 / det 10000
+- 2026-11-23 · AR118 · Argollas Med. con Circones Rosados · x6 4500 / x3 6500 / det 10500
