@@ -349,6 +349,22 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape") closeAll()});
 $("#q").addEventListener("input",e=>{q=e.target.value;renderGrid()});
 $("#sort").addEventListener("change",e=>{sort=e.target.value;renderGrid()});
 renderSeg();renderGrid();renderTray();
+
+// Registro anónimo del pedido enviado a WhatsApp (mismo Sheet "FRADE Links · Registro"). Nunca retrasa a la clienta.
+const REGISTRO="https://script.google.com/macros/s/AKfycbxxkvt7Qv3Cnzs7GhH82Thy95HQQ1SPhKpVC2qix9pSWuBXcpzVR66Qi64stiVceiHKUQ/exec";
+function vidCat(){try{let v=localStorage.getItem("frade_vid");if(!v){v=Math.random().toString(36).slice(2,10);localStorage.setItem("frade_vid",v)}return v}catch(e){return ""}}
+function registrarPedido(){
+  try{
+    const T=totals(), S=seller(); if(!T.pieces) return;
+    const red=((new URLSearchParams(location.search).get("s"))||"").toLowerCase();
+    const d=JSON.stringify({evento:"pedido",boton:"Pedido catálogo",destino:S.n,origen:red?"catalogo-"+red:"catalogo",
+      disp:/Mobi|Android|iPhone/i.test(navigator.userAgent)?"Móvil":"Escritorio",vid:vidCat(),
+      ref:`${T.pieces} pzs · ${clp(T.sum)} · ${T.t}${T.pend?" · "+T.pend+" por confirmar":""}`});
+    navigator.sendBeacon?navigator.sendBeacon(REGISTRO,new Blob([d],{type:"text/plain"}))
+      :fetch(REGISTRO,{method:"POST",body:d,mode:"no-cors",keepalive:true});
+  }catch(e){}
+}
+$("#waBtn").addEventListener("click",registrarPedido);
 </script>
 
 </body>
